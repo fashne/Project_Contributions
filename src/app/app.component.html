@@ -1,0 +1,55 @@
+<div>
+  <nav class="navbar bg-body-tertiary solid fixed-top">
+    <!-- top bar -->
+    <div class="container-fluid">
+      <div class="container-fluid row align-items-center">
+        <div class="col-auto">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="col">
+          <ol class="mt-4 breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Templates</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Category A</li>
+            <button class="btn btn-add btn-secondary"> + </button>
+          </ol>
+        </div>
+        <div class="col-auto">
+          <a class="navbar-brand" href="#"><img class="logo" src={{logo}} alt="EDS" />Entegra Data
+            Staging</a>
+        </div>
+
+      </div>
+      <!-- toggler -->
+      <div class="offcanvas offcanvas-start show" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h4 class="navbar-brand" href="#"><img class="logo" src="assets/EDS logo.png" alt="EDS" />Entegra Data
+            Staging</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Templates
+              </a>
+              <ul class="dropdown-menu bg-secondary">
+                <li><a class="dropdown-item" routerLink="templates/category"
+                    *ngFor="let category of categories">{{category.name}}</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Jobs</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

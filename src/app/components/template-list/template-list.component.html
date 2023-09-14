@@ -1,0 +1,88 @@
+<div class="page">
+    <div class="row align-items-center">
+        <div class="col-auto">
+            <!-- Search Field -->
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-button">
+                <button class="btn btn-outline-primary" type="button" id="search-button">Search</button>
+            </div>
+        </div>
+        <div class="col-auto filter-icon" id="filter-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-filter"
+                viewBox="0 0 16 16">
+                <path
+                    d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<table class="mt-2 table  table-bordered">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let head of HeadArray">{{ head }}
+                <svg aria-hidden="true" height="10px" fill="gray" focusable="false" data-prefix="fas" data-icon="sort"
+                    class="svg-inline--fa fa-sort icon" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512">
+                    <path fill="gray"
+                        d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z">
+                    </path>
+                </svg>
+
+            </th>
+            <th *ngIf="isAction">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of GridArray">
+            <!--  -->
+            <td *ngFor="let head of HeadArray">{{item[head]}}</td>
+
+            <!-- <td *ngif=""></td> -->
+            <!-- actions -->
+            <td *ngIf="isAction">
+                <a href="#" class="icon-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-pencil"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
+                    </svg>
+                </a>
+                <span style="margin-right: 10px;"></span>
+                <a href="#" class="icon-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+                        class="text-danger bi bi-trash" viewBox="0 0 16 16">
+                        <path
+                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                        <path
+                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                    </svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<script>
+    const filterIcon = document.getElementById('filter-icon');
+    const popup = document.getElementById('popup');
+
+    filterIcon.addEventListener('click', function () {
+        popup.style.display = 'block';
+    });
+
+    // Close the popup when clicking outside of it
+    document.addEventListener('click', function (e) {
+        if (e.target !== filterIcon && e.target !== popup) {
+            popup.style.display = 'none';
+        }
+    });
+</script>

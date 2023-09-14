@@ -1,0 +1,10 @@
+.logo {
+    width: 38px;
+}
+
+.btn-add {
+    border-radius: 50%;
+    text-align: center;
+    margin: -8px;
+    margin-left: 12px;
+}
