@@ -1,7 +1,7 @@
-<div>
-  <nav class="navbar bg-body-tertiary solid fixed-top">
+<div class="row">
+  <nav class="navbar bg-body-tertiary solid fixed">
     <!-- top bar -->
-    <div class="container-fluid">
+    <div class="container-fluid row">
       <div class="container-fluid row align-items-center">
         <div class="col-auto">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -9,14 +9,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-        <div class="col">
-          <ol class="mt-4 breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Templates</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Category A</li>
-            <button class="btn btn-add btn-secondary"> + </button>
-          </ol>
-        </div>
-        <div class="col-auto">
+
+        <!-- breadcrumb -->
+        <app-breadcrumb class="col"></app-breadcrumb>
+
+        <!-- logo -->
+        <div class=" col-auto">
           <a class="navbar-brand" href="#"><img class="logo" src={{logo}} alt="EDS" />Entegra Data
             Staging</a>
         </div>

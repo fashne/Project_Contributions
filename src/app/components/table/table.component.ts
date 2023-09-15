@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { TableData } from 'src/app/models/table_model';
-import { TemplateListService } from 'src/app/services/template-list.service';
+import { TableService } from 'src/app/services/table.service';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TemplateListComponent implements OnInit {
+export class TableComponent implements OnInit {
 
   HeadArray: string[] = ["JobID", "TemplateName", "DateCreated", "LastUpdated", "Status"];
   GridArray: any = [];
   isAction: boolean = true;
   isSelectable: boolean = true;
 
-  constructor(private templateListService: TemplateListService) { }
+  constructor(private tableService: TableService) { }
 
   ngOnInit(): void {
-    this.templateListService.getTableData()
+    this.tableService.getTableData()
       .subscribe({
         next: (GridArray) => {
           this.GridArray = GridArray;
