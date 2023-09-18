@@ -1,0 +1,9 @@
+<!-- dropdown.component.html -->
+
+<div class="dropdown-container">
+    <label for="cars" class="dropdown-label">Columns </label>
+    <select name="cars" id="cars" class="dropdown-select">
+      <option *ngFor="let car of cars" [value]="car">{{ car }}</option>
+    </select>
+  </div>
+  

@@ -3,13 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './components/table/table.component';
 import { CategoryComponent } from './components/templates/templates.component';
 import { JobsComponent } from './components/jobs/jobs.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { FilterComponent } from './components/filter/filter.component';
 import { CreateTemplateComponent } from './components/create-template/create-template.component';
+import { CreateJobComponent } from './components/create-job/create-job.component';
 
 // configuring routes
 const routes: Routes = [
   { path: 'templates/category', component: CategoryComponent, data: { breadcrumb: 'Category' } },
   { path: 'templates/category/create_template', component: CreateTemplateComponent, data: { breadcrumb: 'Category/Create Template' } },
   { path: 'jobs', component: JobsComponent, data: { breadcrumb: 'Jobs' } },
+  { path: 'jobs/create_job', component: CreateJobComponent, data: { breadcrumb: 'Jobs/Create Job' } },
 ];
 
 @NgModule({

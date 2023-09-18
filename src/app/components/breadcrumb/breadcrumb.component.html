@@ -4,7 +4,7 @@
     <button class="btn btn-add btn-secondary"> + </button>
 </ol> -->
 
-<ol class="breadcrumb breadcrumb-pos">
+<ol class="breadcrumb breadcrumb-pos align-items-center">
     <ng-container *ngFor="let breadcrumb of breadcrumbs | async; let last = last">
         <li class="breadcrumb-item" [ngClass]="{'active': last}">
             <ng-container *ngIf="!last">
@@ -13,5 +13,6 @@
             <ng-container *ngIf="last">{{ breadcrumb.label }}</ng-container>
         </li>
     </ng-container>
-    <button class="btn btn-add btn-secondary" (click)="addClicked()"> + </button>
+    <!-- <button class="btn  btn-secondary" > + </button> -->
+    <button mat-mini-fab extended class="bg-primary text-white btn-add" (click)="addClicked()">+ </button>
 </ol>

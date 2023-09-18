@@ -1,5 +1,5 @@
 <div class="row">
-  <nav class="navbar bg-body-tertiary solid fixed">
+  <nav class="navbar bg-body-tertiary solid fixed bg-secondary">
     <!-- top bar -->
     <div class="container-fluid row">
       <div class="container-fluid row align-items-center">
@@ -21,11 +21,14 @@
 
       </div>
       <!-- toggler -->
-      <div class="offcanvas offcanvas-start show" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas offcanvas-start show bg-secondary m-auto" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h4 class="navbar-brand" href="#"><img class="logo" src="assets/EDS logo.png" alt="EDS" />Entegra Data
+          <h4 class="navbar-brand text-white" href="#"><img class="logo" src="assets/EDS logo.png" alt="EDS" />Entegra
+            Data
             Staging</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -51,3 +54,5 @@
 
   <router-outlet></router-outlet>
 </div>
+
+<!-- <app-filter></app-filter> -->
