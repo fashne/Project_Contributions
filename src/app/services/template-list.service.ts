@@ -11,6 +11,6 @@ export class TemplateListService {
   constructor(private http: HttpClient) { }
 
   getTableData(): Observable<any> {
-    return this.http.get<any>('https://v4gjr.wiremockapi.cloud/table');
+    return this.http.get<any>('https://lr7rg.wiremockapi.cloud/table');
   }
 }
