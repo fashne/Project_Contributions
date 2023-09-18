@@ -1,0 +1,29 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <tr>
+                <th *ngFor="let value of columnHeadings">{{ value }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories">
+                <td>{{ category.CategoryID }}</td>
+                <td>{{ category.Name }}</td>
+                <td>{{ category.CreatedAt }}</td>
+                <td>{{ category.CreatedBy }}</td>
+                <td>{{ category.UpdatedAt }}</td>
+                <td>{{ category.UpdatedBy }}</td>
+                <td>{{ category.Active ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<app-pagination [totalRecords]="GridArray.length" [recordsPerPage]="itemsPerPage"
+    (pageChange)="onPageChange($event)"></app-pagination>

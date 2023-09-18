@@ -10,7 +10,7 @@
         </div>
         <div class="col-auto filter-icon" id="filter-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-filter"
-                viewBox="0 0 16 16">
+                viewBox="0 0 16 16" routerLink="templates/filter">
                 <path
                     d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
             </svg>
@@ -25,7 +25,7 @@
 <table class="mt-2 table  table-bordered">
     <thead>
         <tr>
-            <th scope="col" *ngFor="let head of HeadArray">{{ head }}
+            <th class="thead-light" scope="col" *ngFor="let head of HeadArray">{{ head }}
                 <svg aria-hidden="true" height="10px" fill="gray" focusable="false" data-prefix="fas" data-icon="sort"
                     class="svg-inline--fa fa-sort icon" role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512">
@@ -39,7 +39,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of GridArray">
+        <tr *ngFor="let item of displayedRecords">
             <!--  -->
             <td *ngFor="let head of HeadArray">{{item[head]}}</td>
 
@@ -67,6 +67,13 @@
         </tr>
     </tbody>
 </table>
+ 
+
+<app-pagination
+  [totalRecords]="GridArray.length"
+  [recordsPerPage]="itemsPerPage"
+  (pageChange)="onPageChange($event)"
+></app-pagination>
 
 
 
