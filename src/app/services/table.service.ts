@@ -6,7 +6,7 @@ import { TableData } from '../models/table_model';
 @Injectable({
   providedIn: 'root'
 })
-export class TemplateListService {
+export class TableService {
 
   constructor(private http: HttpClient) { }
 
