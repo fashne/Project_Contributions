@@ -17,7 +17,7 @@ import { TemplateFilterComponent } from './components/template-filter/template-f
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { MatButtonModule } from '@angular/material/button';
 import { CreateJobComponent } from './components/create-job/create-job.component';
-
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +36,8 @@ import { CreateJobComponent } from './components/create-job/create-job.component
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
